@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import DataPilem from '../data.json';
 import ShowCard from './ShowCard';
 
 class Search extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
 
     this.state = {
@@ -15,7 +15,14 @@ class Search extends Component {
 
   handleSearchTermChange(event) {
     this.setState({ searchTerm: event.target.value });
-  }
+  }*/
+
+  state = {
+    searchTerm: '',
+  };
+  handleSearchTermChange = event => {
+    this.state({searchTerm: event.target.value});
+  };
 
   render() {
     return (
@@ -34,7 +41,9 @@ class Search extends Component {
           />
         </header>
         <div>
-          {DataPilem.shows.map(show => <ShowCard key={show.imdbID} {...show} />)}
+          {DataPilem.shows.map(show => (
+            <ShowCard key={show.imdbID} {...show} />
+          ))}
         </div>
       </div>
     );
