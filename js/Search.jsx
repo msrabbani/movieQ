@@ -18,10 +18,10 @@ class Search extends Component {
   }*/
 
   state = {
-    searchTerm: '',
+    searchTerm: ''
   };
   handleSearchTermChange = event => {
-    this.state({searchTerm: event.target.value});
+    this.setState({searchTerm: event.target.value});
   };
 
   render() {
@@ -32,7 +32,9 @@ class Search extends Component {
         {/* {DataPilem.shows.map(show => <h3>{show.title}</h3> )}*/}
 
         <header>
-          <h1>videoQ</h1>
+           <h1>videoQ</h1>
+           <h1>{this.state.searchTerm.toUpperCase()}</h1>
+
           <input
             onChange={this.handleSearchTermChange}
             value={this.state.searchTerm}
@@ -41,7 +43,9 @@ class Search extends Component {
           />
         </header>
         <div>
-          {DataPilem.shows.map(show => (
+            {DataPilem.shows.filter(show =>
+                `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
+               .map(show => (
             <ShowCard key={show.imdbID} {...show} />
           ))}
         </div>
