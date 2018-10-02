@@ -32,7 +32,7 @@ class Search extends Component {
         {/* {DataPilem.shows.map(show => <h3>{show.title}</h3> )}*/}
 
         <header>
-            <h1>video-s</h1>
+            <h1>videoQ</h1>
            <h1>{this.state.searchTerm.toUpperCase()}</h1>
 
           <input
