@@ -1,38 +1,22 @@
+// @flow
+
 import React, {Component} from 'react';
 import DataPilem from '../data.json';
 import ShowCard from './ShowCard';
 
 class Search extends Component {
-  /* constructor(props) {
-    super(props);
-
-    this.state = {
-      searchTerm: 'this is some sort debug statment'
-    };
-
-    this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
-  }
-
-  handleSearchTermChange(event) {
-    this.setState({ searchTerm: event.target.value });
-  }*/
-
   state = {
     searchTerm: ''
   };
-  handleSearchTermChange = event => {
+  handleSearchTermChange = (event: SyntheticKeyboardEvent & {target: HTMLInputElement}) => {
     this.setState({searchTerm: event.target.value});
   };
 
   render() {
     return (
       <div className="search">
-        {/* <pre><code> {JSON.stringify(DataPilem, null,4)} </code></pre>*/}
-
-        {/* {DataPilem.shows.map(show => <h3>{show.title}</h3> )}*/}
-
         <header>
-            <h1>video-s</h1>
+            <h1>videoQ</h1>
            <h1>{this.state.searchTerm.toUpperCase()}</h1>
 
           <input
