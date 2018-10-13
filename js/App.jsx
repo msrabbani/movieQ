@@ -15,7 +15,7 @@ const App = () => (
       <div className="app">
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/search" component={Search} />
+          <Route path="/search" component={props => <Search shows= {dataPilem.shows}{...props} />} />
           <Route path="/details/:id" component={(props: { match: Match }) => {
               const selectedShow= dataPilem.shows.find(show => props.match.params.id === show.imdbID);
 
