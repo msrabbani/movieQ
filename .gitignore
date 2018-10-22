@@ -10,4 +10,9 @@ public/*bundle*
 _site/
 .sass-cache/
 *.iml
+*.swp
+*.swn
+*.swm
+*.swo
+*.swl
 .idea/
