@@ -15,4 +15,5 @@ _site/
 *.swm
 *.swo
 *.swl
+*.swk
 .idea/
