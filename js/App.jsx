@@ -1,9 +1,9 @@
-// @flow 
+// @flow
 
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import type { Match } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import type {Match} from 'react-router-dom';
+import {Provider} from 'react-redux';
 import store from './store';
 import Landing from './Landing';
 import Search from './Search';
@@ -13,22 +13,30 @@ import dataPilem from '../data.json';
 const FourOFour = () => <h1>404</h1>;
 
 const App = () => (
-    <BrowserRouter>
-        <Provider store= {store}>
+  <BrowserRouter>
+    <Provider store={store}>
       <div className="app">
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/search" component={props => <Search shows= {dataPilem.shows}{...props} />} />
-          <Route path="/details/:id" component={(props: { match: Match }) => {
-              const selectedShow= dataPilem.shows.find(show => props.match.params.id === show.imdbID);
+          <Route
+            path="/search"
+            component={props => <Search shows={dataPilem.shows} {...props} />}
+          />
+          <Route
+            path="/details/:id"
+            component={(props: {match: Match}) => {
+              const selectedShow = dataPilem.shows.find(
+                show => props.match.params.id === show.imdbID,
+              );
 
-              return <Details show={selectedShow} {...props} />
-          }} />
+              return <Details show={selectedShow} {...props} />;
+            }}
+          />
           <Route component={FourOFour} />
         </Switch>
       </div>
     </Provider>
-    </BrowserRouter>
+  </BrowserRouter>
 );
 
 export default App;
