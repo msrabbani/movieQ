@@ -9,17 +9,9 @@ import Header from './Header';
 // eliminate state, karena kita akan mengakses state ke redux
 // eliminate handleSearchTerm
 
-const Search = (props: {
-  searchTerm: string,
-  shows: Array<Show>,
-  handleSearchTermChange: Function,
-}) => (
+const Search = (props: {searchTerm: string, shows: Array<Show>}) => (// eslint-disable-line react/no-unused-prop-types
   <div className="search">
-    <Header
-      searchTerm={props.searchTerm}
-      showSearch
-      handleSearchTermChange={props.handleSearchTermChange}
-    />
+    <Header showSearch />
     <div>
       {props.shows
         .filter(
@@ -28,7 +20,9 @@ const Search = (props: {
               .toUpperCase()
               .indexOf(props.searchTerm.toUpperCase()) >= 0,
         )
-        .map(show => <ShowCard key={show.imdbID} {...show} />)}
+        .map((show, index) => 
+          <ShowCard key={show.imdbID} {...show} id={index} />
+        )}
     </div>
   </div>
 );

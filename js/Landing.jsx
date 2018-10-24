@@ -22,7 +22,7 @@ class Landing extends Component {
     return (
       <div className="app">
         <div className="landing">
-          <h1>{this.props.searchTerm}</h1>
+          <h1>VideoQ</h1>
           <form onSubmit={this.goToSearch}>
             <input
               onChange={this.props.handleSearchTermChange}
@@ -38,7 +38,7 @@ class Landing extends Component {
   }
 }
 
-const mapStateToProps = state => ({searchTerm: state.serachTerm});
+const mapStateToProps = state => ({searchTerm: state.searchTerm});
 const mapDispatchToProps = (dispatch: Function) => ({
   handleSearchTermChange(event) {
     dispatch(setSearchTerm(event.target.value));
