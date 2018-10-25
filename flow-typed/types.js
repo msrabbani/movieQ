@@ -14,11 +14,11 @@ declare var module: {
   },
 };
 
-declare type ActionType = 'SET_SEARCH_TERM'
+declare type ActionType = 'SET_SEARCH_TERM';
 
-declare type ActionT<A: ActionType, P> { // pure flow stuff
+declare type ActionT<A: ActionType, P> = {| // pure flow stuff
     type: A,
     payload: P
-}
+|}
 
 export type Action = ActionT<'SET_SEARCH_TERM', string>
