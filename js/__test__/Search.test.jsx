@@ -1,9 +1,9 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import { Unwrapped as UnwrappedSearch } from '../Search';
 import showCard  from '../ShowCard';
 import DataPilem from '../../data.json';
-import Adapter from 'enzyme-adapter-react-15';
 
 Enzyme.configure({ adapter: new Adapter() });
 // console.log(process.env.NODE_ENV)
