@@ -1,26 +1,27 @@
 import React from 'react';
-import {shallow} from 'enzyme'
-import Search from '../Search';
+import Enzyme, {shallow} from 'enzyme';
+import { Unwrapped as UnwrappedSearch } from '../Search';
 import showCard  from '../ShowCard';
-import DataPilem from '../../data.json'
+import DataPilem from '../../data.json';
+import Adapter from 'enzyme-adapter-react-15';
 
-
-console.log(process.env.NODE_ENV)
+Enzyme.configure({ adapter: new Adapter() });
+// console.log(process.env.NODE_ENV)
 
 test('Search renders correctly', ()=> {
-    const component =  shallow(<Search />)
+    const component = shallow(<UnwrappedSearch shows={DataPilem.shows} searchTerm='' />)
     expect(component).toMatchSnapshot()
 })
 
 test('Search should render correct amount of shows', () => {
-    const component = shallow(<Search />)
+    const component = shallow(<UnwrappedSearch shows={DataPilem.shows} searchTerm='' />)
     expect(component.find(showCard).length).toEqual(DataPilem.shows.length)
 })
 
 test('Search should render correct amount of shows based on search term', () => {
     const searchWord = 'black';
-    const component = shallow(<Search />)
-    component.find('input').simulate('change', {target: {value: searchWord}})
+    const component = shallow(<UnwrappedSearch shows= {DataPilem.shows} searchTerm = {searchWord}/>)
+    // component.find('input').simulate('change', {target: {value: searchWord}})
 
     const showCount = DataPilem.shows.filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(searchWord.toUpperCase()) >= 0).length
 
