@@ -1,3 +1,4 @@
+// @flow
 import reducers from '../reducers';
 
 test('reducers', () => {
