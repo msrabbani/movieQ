@@ -10,7 +10,7 @@ const _ = require('lodash');
 const fs = require('fs');
 const App = require('./js/App').default;
 
-const StatusRouter = ReactRouter.StaticRouter;
+const StaticRouter = ReactRouter.StaticRouter;
 const port = 8080;
 const baseTemplate = fs.readFileSync('./index.html');
 const template = _.template(baseTemplate);
@@ -19,10 +19,11 @@ const server = express();
 
 server.use('/public', express.static('./public'));
 server.use((req, res) => {
+    console.log(req.url)
   const context = {};
   const body = ReactDOMServer.renderToString(
     React.createElement(
-      StatusRouter,
+      StaticRouter,
       {location: req.url, context},
       React.createElement(App),
     ),
