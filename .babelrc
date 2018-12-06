@@ -18,10 +18,10 @@
       "plugins": [
       "transform-es2015-modules-commonjs"]
       },
-      "server": [
+      "server": {
       "plugins": [
       "transform-es2015-modules-commonjs"
       ]
-      ]
+      }
       }
 }
