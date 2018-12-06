@@ -21,7 +21,7 @@ test('addAPIData', () => {
 });
 
 test('getAPIDetails', (done: Function)=> {
-        const dispatchMock = jest.fn()
+    const dispatchMock = jest.fn() // spy function
     moxios.withMock(()=> {
         getAPIDetails(breakingBad.imdbID)(dispatchMock)
         moxios.wait(()=> {
