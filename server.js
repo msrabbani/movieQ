@@ -32,7 +32,7 @@ server.use(webpackHotMiddleware(compiler))
 
 server.use('/public', express.static('./public'));
 server.use((req, res) => {
-    console.log(req.url)
+    console.log(`======> ${req.url}`)
   const context = {};
   const body = ReactDOMServer.renderToString(
     React.createElement(
