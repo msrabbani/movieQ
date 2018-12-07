@@ -11,7 +11,9 @@
   ],
   "plugins": [
   "babel-plugin-transform-class-properties",
-  "react-hot-loader/babel"
+  "react-hot-loader/babel",
+  "babel-plugin-dynamic-import-webpack",
+  "babel-plugin-syntax-dynamic-import"
   ],
   "env": {
       "test": {
