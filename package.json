@@ -8,7 +8,8 @@
     "watch": "webpack --watch",
     "test": "jest",
     "test:update": "jest -u",
-    "test:istanbul": "jest --coverage"
+    "test:istanbul": "jest --coverage",
+    "start": "NODE_ENV=server node server.js"
   },
   "jest": {
     "snapshotSerializers": [
