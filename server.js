@@ -11,6 +11,7 @@ const fs = require('fs');
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const webpack = require('webpack')
+const compression = require('compression')
 const App = require('./js/App').default;
 const config = require('./webpack.config')
 
@@ -21,6 +22,7 @@ const template = _.template(baseTemplate);
 
 const server = express();
 
+server.use(compression())
 const compiler = webpack(config)
 
 server.use(
