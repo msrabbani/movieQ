@@ -22,7 +22,7 @@ class Landing extends Component {
     return (
       <div className="app">
         <div className="landing">
-          <h1>VideoQ</h1>
+          <h1>movieQ</h1>
           <form onSubmit={this.goToSearch}>
             <input
               onChange={this.props.handleSearchTermChange}
