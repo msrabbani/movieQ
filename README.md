@@ -1,2 +1,1 @@
-# react-btholt
-intro to React by btholt 
+#Movie Finder
