@@ -22,4 +22,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ### `yarn build`
 Builds the app for production to the `public/bundle.js`.<br>
 It correctly bundles React in webpack production mode and optimizes the build for the best performance.<br>
-See the section about [deployment](https://webpack.js.org/configuration/mode/) for more information.
+See the section about [production](https://webpack.js.org/configuration/mode/) for more information.
