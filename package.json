@@ -78,7 +78,7 @@
   },
   "name": "movieQ",
   "version": "1.0.0",
-  "description": "A Complete Intro to React workshop",
+  "description": "movie finder base on react-native",
   "main": "server.js",
   "repository": "git@github.com:btholt/movieQ.git",
   "author": "msrabbani <msrabbani@gmail.com>",
